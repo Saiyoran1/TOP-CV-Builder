@@ -35,16 +35,29 @@ function App() {
   }
 
   const educationInfo = {
-    education: education,
+    education,
     changeEducation: handleEducationChange
+  }
+
+  const [experience, setExperience] = useState([]);
+  const handleExperienceChange = (newExperience) => {
+    setExperience(newExperience);
+  }
+
+  const experienceInfo = {
+    experience,
+    changeExperience: handleExperienceChange
   }
 
   return (
     <div className="App">
       <Builder generalInfo={generalInfo} 
-        education={educationInfo}/>
-      <Preview generalInfo={generalInfo}
         education={educationInfo}
+        experience={experienceInfo}
+        />
+      <Preview generalInfo={generalInfo}
+        education={education}
+        experience={experience}
       />
     </div>
   );
